@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order & Cart - Jagganath Ji Ki Rasoi</title>
+    <meta property="og:image" content="/images/preview.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .cart-item h4 { margin: 0; color: var(--primary-color); }
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cart-item-controls button {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .cart-summary {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .checkout-form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .checkout-form input, .checkout-form select {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .checkout-form button {
+            padding: 15px;
+            font-size: 1.1rem;
+            background: var(--whatsapp-green);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .checkout-form button:hover {
+            background: #20b858;
+        }
+        #location-btn {
+            background: #3498db;
+        }
+        #location-btn:hover {
+            background: #2980b9;
+        }
+        #empty-cart-msg {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <span>🌟 Daily Tiffin Service Available - Order Now! 🌟</span>
+    </div>
+
+    <header id="header">
+        <div class="container navbar">
+            <div class="logo">
+                <a href="/home">Jagganath Ji Ki Rasoi</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/menu">Menu</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/order"><i class="fas fa-shopping-cart"></i> Cart (<span class="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="order" class="section bg-light fade-in appear">
+        <div class="container">
+            <h2 class="section-title">Your Cart & Order</h2>
+            <div class="cart-container">
+                <div id="cart-items">
+                    <!-- Cart items injected here -->
+                </div>
+                <div id="empty-cart-msg">Your cart is empty. <a href="/menu" style="color:var(--primary-color); text-decoration:underline;">Browse Menu</a></div>
+                
+                <div class="cart-summary" id="cart-summary" style="display:none;">
+                    <p>Subtotal: ₹<span id="cart-subtotal">0</span></p>
+                    <p>Delivery Charge: ₹<span id="delivery-charge">0</span></p>
+                    <p>Total: ₹<span id="cart-total">0</span></p>
+                </div>
+
+                <form class="checkout-form" id="checkout-form" style="display:none;">
+                    <h3>Delivery Details</h3>
+                    <input type="text" id="cust-name" placeholder="Full Name" required>
+                    <input type="number" id="cust-age" placeholder="Age" required>
+                    <input type="tel" id="cust-phone" placeholder="Phone Number" required>
+                    <select id="cust-area" required>
+                        <option value="">Select Delivery Distance</option>
+                        <option value="free">Within 2-3 km (Free Delivery)</option>
+                        <option value="paid">Beyond 3 km (₹30 Delivery Charge)</option>
+                    </select>
+                    
+                    <button type="button" id="location-btn"><i class="fas fa-map-marker-alt"></i> Capture Live Location</button>
+                    <input type="hidden" id="cust-location" value="">
+                    <p id="location-status" style="font-size:0.9rem; color:green; margin-top:-10px; display:none;">Location captured successfully!</p>
+                    
+                    <button type="submit"><i class="fab fa-whatsapp"></i> Place Order via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Jagganath Ji Ki Rasoi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
