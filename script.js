@@ -3,14 +3,14 @@
 // ==========================================
 const products = [
     { name: "Burger", price: 50, description: "Delicious veg patty inside a soft bun with creamy sauces.", image: "https://images.pexels.com/photos/31450802/pexels-photo-31450802.jpeg" },
-    { name: "Vada Pav", price: 30, description: "Classic Mumbai street food, spicy potato filling in soft bread.", image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { name: "Vada Pav", price: 30, description: "Classic Mumbai street food, spicy potato filling in soft bread.", image: "https://images.pexels.com/photos/17433337/pexels-photo-17433337.jpeg" },
     { name: "Dahi Bhalle", price: 50, description: "Soft lentil fritters soaked in creamy yogurt and chutneys.", image: "https://images.pexels.com/photos/9213253/pexels-photo-9213253.jpeg" },
     { name: "Dahi Tikki", price: 50, description: "Crispy potato patties topped with sweet yogurt and spices.", image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
     { name: "Chole Tikki", price: 50, description: "Spicy chickpea curry served over crispy potato patties.", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
     { name: "Ram Ladoo", price: 50, description: "Moong dal fritters topped with grated radish and tangy chutney.", image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
     { name: "Appe", price: 50, description: "South Indian snack made from fermented batter, crispy outside and soft inside.", image: "https://images.unsplash.com/photo-1606491956391-70868b5d0f47?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
     { name: "Bhelpuri", price: 30, description: "Savory snack made of puffed rice, vegetables and tangy tamarind sauce.", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
-    { name: "Sev Puri", price: 50, description: "Crispy flat puris loaded with diced potatoes, onions, chutneys and sev.", image: "https://images.unsplash.com/photo-1599487405702-00aae808c286?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { name: "Sev Puri", price: 50, description: "Crispy flat puris loaded with diced potatoes, onions, chutneys and sev.", image: "https://images.pexels.com/photos/32894826/pexels-photo-32894826.jpeg" },
     { name: "Fried Idli", price: 50, description: "Leftover idlis cut and fried with spices for a delicious twist.", image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
     { name: "Chole Kulche", price: 50, description: "Spicy and tangy chole served with soft and fluffy kulchas.", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" }
 ];
