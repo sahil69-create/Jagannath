@@ -15,6 +15,20 @@ const products = [
     { name: "Chole Kulche", price: 50, description: "Spicy and tangy chole served with soft and fluffy kulchas.", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" }
 ];
 
+const happyCustomers = [
+    { name: "Rahul Sharma", feedback: "Absolutely delicious! The home-cooked taste is authentic and fresh.", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { name: "Priya Singh", feedback: "Best tiffin service in town. The hygiene standards are top-notch.", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { name: "Amit Verma", feedback: "Reminds me of my mother's cooking. Highly recommended!", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { name: "Neha Gupta", feedback: "Perfect spice blend and always delivered on time.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { name: "Vikram Das", feedback: "A lifesaver for working professionals looking for pure veg food.", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" }
+];
+
+const blogPosts = [
+    { title: "The Secret to Perfect Chole Bhature", tag: "Food Secrets", desc: "Discover the authentic spices and slow-cooking techniques that make our Chole so special.", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { title: "Why Pure Veg Matters", tag: "Health & Lifestyle", desc: "Explore the health benefits and spiritual significance of consuming pure, satvik food every day.", image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+    { title: "Street Food Journey: Mumbai to Delhi", tag: "Stories", desc: "How we brought the best flavors of India's streets into our hygienic rasoi.", image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" }
+];
+
 let cart = JSON.parse(localStorage.getItem('rasoi_cart')) || [];
 
 function updateCartCount() {
@@ -105,6 +119,47 @@ document.addEventListener('DOMContentLoaded', () => {
         toastTimeout = setTimeout(() => {
             toast.className = 'toast';
         }, 2000);
+    }
+
+    // Render Happy Customers Marquee
+    const customerMarquee = document.getElementById('customer-marquee');
+    if (customerMarquee) {
+        let marqueeHtml = '';
+        happyCustomers.forEach(customer => {
+            marqueeHtml += `
+                <div class="customer-card">
+                    <img src="${customer.image}" alt="${customer.name}">
+                    <h4>${customer.name}</h4>
+                    <p>"${customer.feedback}"</p>
+                </div>
+            `;
+        });
+        // Duplicate content for seamless infinite scrolling
+        customerMarquee.innerHTML = marqueeHtml + marqueeHtml;
+    }
+
+    // Render Blog Posts
+    const blogGrid = document.getElementById('blog-grid');
+    if (blogGrid) {
+        blogPosts.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'blog-card';
+            card.innerHTML = `
+                <img src="${post.image}" alt="${post.title}" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-tag">${post.tag}</span>
+                    <h3 class="blog-title">${post.title}</h3>
+                    <p class="blog-desc">${post.desc}</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            `;
+            // For now, clicking read more just alerts, but can link to full pages
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert(`Opening full article: ${post.title}`);
+            });
+            blogGrid.appendChild(card);
+        });
     }
 
     // Mobile Menu Toggle
