@@ -27,7 +27,8 @@
 - **📱 WhatsApp Integration**: Automatically formats customer details, live location, and order summary into a WhatsApp message.
 - **📍 Live Location Capture**: Users can share their exact delivery coordinates with a single click.
 - **🚚 Smart Delivery Logic**: Calculates delivery charges automatically (Free within 2-3km, ₹30 otherwise).
-- **🖼️ Interactive Gallery**: Beautiful lightbox image gallery for showcasing food.
+- **🖼️ Happy Customers Showcase**: Beautiful, infinite horizontal scrolling marquee featuring customer reviews.
+- **📝 Food Blog**: Modern blog page with interactive cards, categories, and engaging food stories.
 - **🔗 Clean URLs**: Fully configured for Vercel deployment with clean, extension-less routing (e.g., `/menu` instead of `menu.html`).
 
 ---
@@ -39,11 +40,12 @@
 ├── 📄 index.html      # Home Page & Testimonials
 ├── 📄 about.html      # About Us
 ├── 📄 menu.html       # Dynamic Food Menu
-├── 📄 gallery.html    # Image Gallery with Lightbox
+├── 📄 gallery.html    # Happy Customers Marquee
+├── 📄 blog.html       # Food Blog & Stories
 ├── 📄 contact.html    # Contact Info & Map
 ├── 📄 order.html      # Cart & Checkout Page
 ├── 🎨 style.css       # Custom Styling & Animations
-├── ⚙️ script.js       # Cart Logic, Location API & WhatsApp Routing
+├── ⚙️ script.js       # Cart Logic, Marquee, Blog & WhatsApp Routing
 └── 🚀 vercel.json     # Deployment Config for Clean URLs
 ```
 
